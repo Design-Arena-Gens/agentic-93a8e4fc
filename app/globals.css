@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b0b12;
+  --panel: #121225;
+  --ink: #eaeafc;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(1200px 800px at 100% -20%, rgba(124,58,237,.12), transparent 60%),
+              radial-gradient(800px 600px at -10% 100%, rgba(34,211,238,.10), transparent 60%),
+              var(--bg);
+  color: var(--ink);
+}
+
+.container-card {
+  @apply max-w-md mx-auto w-full rounded-3xl bg-[color:var(--panel)]/70 backdrop-blur border border-white/10 shadow-xl;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium transition active:scale-95;
+}
+.btn-primary {
+  @apply btn bg-primary text-white hover:bg-violet-600;
+}
+.btn-ghost {
+  @apply btn bg-white/5 hover:bg-white/10;
+}
+
+.message {
+  @apply px-4 py-3 rounded-2xl text-sm leading-relaxed;
+}
+.message-user {
+  @apply bg-primary/20 border border-primary/30 self-end rounded-br-md;
+}
+.message-bot {
+  @apply bg-white/5 border border-white/10 rounded-bl-md;
+}
+
+.mic-button {
+  @apply h-14 w-14 rounded-full grid place-items-center bg-primary text-white shadow-lg;
+}
+.mic-button.listening {
+  @apply animate-pulseGlow bg-violet-500;
+}
+
+/* Tiny Robot Avatar */
+.robot {
+  width: 72px;
+  height: 72px;
+}
+.robot .body {
+  filter: drop-shadow(0 4px 20px rgba(124,58,237,0.35));
+}
+.robot.walking {
+  animation: walk 1.2s ease-in-out infinite;
+}
+.robot.floaty {
+  animation: floaty 3s ease-in-out infinite;
+}
